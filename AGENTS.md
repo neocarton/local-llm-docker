@@ -8,6 +8,7 @@ Windows-native Docker orchestration for local LLM + embedding + vector DB + sear
 |---|---|---|---|
 | llama-cpp | `llama-cpp` | 8080 | LLM inference (CUDA, MTP draft) |
 | llama-cpp-embed | `llama-cpp-embedding` | 8081 | Embedding server (CPU) |
+| ollama | `ollama` | 11434 | LLM inference (Ollama, CUDA) |
 | qdrant | `qdrant` | 6333 | Vector DB (named volume) |
 | searxng | `searxng` | 8888 | Web search |
 
@@ -18,17 +19,20 @@ Switch models by editing the corresponding `*-env.bat` file's `MODEL` variable, 
 
 ```bat
 :: From repo root (uses .bin/ shortcuts):
-.bin\llama-cpp.bat          :: start LLM + SearXNG, tail logs
-.bin\llama-cpp-stop.bat     :: stop LLM + SearXNG
-.bin\llama-cpp-log.bat      :: attach to llama-cpp logs
-.bin\llama-cpp-embed.bat    :: start embedding + qdrant, tail logs
-.bin\llama-cpp-embed-stop.bat :: stop embedding + qdrant
+bin\llama-cpp.bat          :: start LLM + SearXNG, tail logs
+bin\llama-cpp-stop.bat     :: stop LLM + SearXNG
+bin\llama-cpp-log.bat      :: attach to llama-cpp logs
+bin\llama-cpp-embed.bat    :: start embedding + qdrant, tail logs
+bin\llama-cpp-embed-stop.bat :: stop embedding + qdrant
+bin\ollama.bat             :: start Ollama + SearXNG, tail logs
+bin\ollama-stop.bat        :: stop Ollama + SearXNG
+bin\ollama-log.bat         :: attach to ollama logs
 
 :: Download a model:
-.bin\download_hf_model.bat --model "org/model-name" --file "filename.gguf"
+bin\download_hf_model.bat --model "org/model-name" --file "filename.gguf"
 ```
 
-Each service also has its own `start.bat`, `stop.bat`, `log.bat` inside its directory.
+Each service also has its own `start.bat`, `stop.bat`, `log.bat` (or equivalent) inside its directory.
 
 ## Environment
 
