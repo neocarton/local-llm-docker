@@ -1,6 +1,6 @@
 @echo off
 
-call env.bat
+call local-llm-env.bat
 
 cd llama-cpp\
 call llama-cpp-embed-log.bat

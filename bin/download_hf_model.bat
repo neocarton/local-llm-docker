@@ -1,6 +1,6 @@
 @echo off
 
-call env.bat
+call local-llm-env.bat
 
 cd download_hf_model\
 call download_hf_model.bat %*

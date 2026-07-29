@@ -1,10 +1,6 @@
 @echo off
 
-call env.bat
-
-cd literag\
-call literag-stop.bat
-cd ..
+call local-llm-env.bat
 
 cd searxng\
 call searxng-stop.bat

@@ -2,5 +2,5 @@
 
 call local-llm-env.bat
 
-cd ollama\
-call ollama-log.bat
+cd literag\
+call literag-log.bat
