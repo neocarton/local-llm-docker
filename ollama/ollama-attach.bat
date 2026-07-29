@@ -5,4 +5,4 @@ call ollama-env.bat
 
 echo Ollama API: http://localhost:%HOST_PORT%/
 
-docker logs -f %CONTAINER_NAME%
+docker attach %CONTAINER_NAME%

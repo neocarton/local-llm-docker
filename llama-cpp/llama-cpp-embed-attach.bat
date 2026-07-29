@@ -3,4 +3,4 @@ setlocal enabledelayedexpansion
 
 call llama-cpp-embed-env.bat
  
-docker logs -f %CONTAINER_NAME%
+docker attach %CONTAINER_NAME%

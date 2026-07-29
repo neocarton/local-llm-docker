@@ -5,4 +5,4 @@ call literag-env.bat
 
 echo LiteRAG API: http://localhost:%HOST_PORT%/
 
-docker logs -f %CONTAINER_NAME%
+docker attach %CONTAINER_NAME%
