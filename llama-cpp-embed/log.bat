@@ -1,8 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call literag-env.bat
-
-echo LiteRAG API: http://localhost:%HOST_PORT%/
-
+call env.bat
+ 
 docker logs -f %CONTAINER_NAME%

@@ -2,5 +2,5 @@
 
 call local-llm-env.bat
 
-cd llama-cpp\
-call llama-cpp-embed-log.bat
+cd llama-cpp-embed\
+call log.bat

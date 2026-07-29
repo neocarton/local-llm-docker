@@ -3,8 +3,8 @@
 call local-llm-env.bat
 
 cd searxng\
-call searxng-stop.bat
+call stop.bat
 cd ..
 
 cd ollama\
-call ollama-stop.bat
+call stop.bat

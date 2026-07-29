@@ -1,8 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call ollama-env.bat
+call env.bat
 
-echo Ollama API: http://localhost:%HOST_PORT%/
+echo LiteRAG API: http://localhost:%HOST_PORT%/
 
 docker logs -f %CONTAINER_NAME%

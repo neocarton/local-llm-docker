@@ -3,4 +3,4 @@
 call local-llm-env.bat
 
 cd ollama\
-call ollama-attach.bat
+call attach.bat

@@ -8,4 +8,4 @@ cd ..
 
 cd ollama\
 call ollama.bat
-call ollama-log.bat
+call log.bat

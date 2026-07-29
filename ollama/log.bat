@@ -1,6 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call llama-cpp-embed-env.bat
- 
+call env.bat
+
+echo Ollama API: http://localhost:%HOST_PORT%/
+
 docker logs -f %CONTAINER_NAME%

@@ -1,9 +1,11 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call literag-env.bat
+call env.bat
 
 echo Starting %CONTAINER_NAME%...
+
+mkdir "%DATA_DIR%"
 
 docker run -d ^
     --env WORKING_DIR="/app/data/rag_storage" ^

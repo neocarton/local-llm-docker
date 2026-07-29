@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call llama-cpp-env.bat
+call env.bat
 
 echo Stopping %CONTAINER_NAME%...
 

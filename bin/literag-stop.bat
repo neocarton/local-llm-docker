@@ -2,9 +2,9 @@
 
 call local-llm-env.bat
 
-cd llama-cpp\
-call llama-cpp-embed-stop.bat
+cd llama-cpp-embed\
+call stop.bat
 cd ..
 
 cd literag\
-call literag-stop.bat
+call stop.bat

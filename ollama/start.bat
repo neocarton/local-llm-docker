@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call ollama-env.bat
+call env.bat
 
 echo Starting %CONTAINER_NAME%...
 

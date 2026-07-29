@@ -50,7 +50,7 @@ To run the project, follow these steps:
 
     ```sh
     cd ollama
-    ollama.bat
+    start.bat
     ```
 
 1. Signin Ollama for key

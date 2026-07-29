@@ -45,7 +45,7 @@ To run the project, follow these steps:
 2. **Start Services**: Start the Docker containers for either Llama.cpp and Qdrant.
 
     ```sh
-    llama-cpp.bat
+    start.bat
     ```
 
 ## Performance Tuning

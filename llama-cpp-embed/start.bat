@@ -1,28 +1,28 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call llama-cpp-env.bat
+call env.bat
 
 echo Starting %CONTAINER_NAME%...
 echo   Model: %MODEL%
 
 docker run -d ^
-    --gpus all ^
-    --env NVIDIA_VISIBLE_DEVICES=all ^
     --volume "%MODELS_DIR%:/models:ro" ^
-    --publish %HOST_PORT%:8080 ^
+    --publish %HOST_PORT%:8081 ^
     --rm ^
     --name %CONTAINER_NAME% ^
     %IMAGE% ^
-    --port 8080 ^
+    --port 8081 ^
     --model %MODEL% ^
-    --ctx-size 256000 ^
-    --n-gpu-layers 20 ^
+    --embeddings ^
+    --pooling last ^
+    --ubatch-size 8192 ^
+    --ctx-size 32768 ^
     --metrics
 
 if %errorlevel% equ 0 (
     echo Container %CONTAINER_NAME% started successfully.
-    echo Llama.cpp API available at: http://localhost:%HOST_PORT%/
+    echo Llama.cpp Embedding API available at: http://localhost:%HOST_PORT%/
 ) else (
     echo Failed to start container %CONTAINER_NAME%.
 )

@@ -7,5 +7,5 @@ call searxng.bat
 cd ..
 
 cd llama-cpp-prismml\
-call llama-cpp.bat
-call llama-cpp-log.bat
+call start.bat
+call log.bat

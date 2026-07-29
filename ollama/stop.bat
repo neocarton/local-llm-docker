@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-call qdrant-env.bat
+call env.bat
 
 echo Stopping %CONTAINER_NAME%...
 
