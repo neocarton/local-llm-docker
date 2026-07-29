@@ -11,6 +11,7 @@ Windows-native Docker orchestration for local LLM + embedding + vector DB + sear
 | ollama | `ollama` | 11434 | LLM inference (Ollama, CUDA) |
 | qdrant | `qdrant` | 6333 | Vector DB (named volume) |
 | searxng | `searxng` | 8888 | Web search |
+| **literag** | `lightrag` | **9621** | **RAG API + knowledge graphs** |
 
 **Default model:** `unsloth/Qwen3.6-35B-A3B-MTP-GGUF` (Q4_K_M, 256k ctx, 10 GPU layers).
 Switch models by editing the corresponding `*-env.bat` file's `MODEL` variable, or the compose file.
@@ -27,6 +28,9 @@ bin\llama-cpp-embed-stop.bat :: stop embedding + qdrant
 bin\ollama.bat             :: start Ollama + SearXNG, tail logs
 bin\ollama-stop.bat        :: stop Ollama + SearXNG
 bin\ollama-log.bat         :: attach to ollama logs
+bin\literag.bat            :: start LiteRAG (requires Ollama + Qdrant)
+bin\literag-stop.bat       :: stop LiteRAG
+bin\literag-log.bat        :: attach to LiteRAG logs
 
 :: Download a model:
 bin\download_hf_model.bat --model "org/model-name" --file "filename.gguf"
@@ -45,6 +49,8 @@ Set `LOCAL_LLM_DATA_BASE_DIR` (default `.`) before starting anything. It control
 Edit `llama-cpp-env.bat` (`MODEL` variable).
 
 For embedding, edit `llama-cpp-embed-env.bat` (`MODEL` variable).
+
+For LiteRAG, edit `literag-env.bat` — change `EMBEDDING_MODEL` and `LLM_MODEL` variables.
 
 ## Gotchas
 
