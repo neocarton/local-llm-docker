@@ -1,0 +1,4 @@
+Star,Model,--ctx-size,--n-gpu-layers,--threads,VRAM,GPU Shared RAM,GPU,RAM,CPU,Duration,Duration (s),Context,Speed,Screenshot,Note
+,prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-Q2.gguf,256000,16,,7.4,0.4,47%,99%,43%,9m 51,591,14300,24.1962774957699,Screenshot 2026-07-28 000400.png,
+,prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-Q2.gguf,256000,24,,7.6,2.8,0%,97%,20%,,,,,Screenshot 2026-07-28 002116.png,
+**,prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-Q2.gguf,256000,20,,7.7,1.4,50%,86%,40%,7m 26s,446,14200,31.8385650224215,,
