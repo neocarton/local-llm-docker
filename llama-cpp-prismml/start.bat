@@ -18,7 +18,7 @@ docker run -d ^
     --model %MODEL% ^
     --parallel 4 ^
     --ctx-size 256000 ^
-    --n-gpu-layers 20 ^
+    --n-gpu-layers 16 ^
     --metrics
 
 if %errorlevel% equ 0 (
