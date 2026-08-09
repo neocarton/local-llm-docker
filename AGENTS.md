@@ -1,6 +1,6 @@
-# AGENTS.md — local-llm2
+# AGENTS.md — local-llm-docker
 
-Windows-native Docker orchestration for local LLM + embedding + vector DB + search.
+Local LLM + embedding + vector DB + search running on Docker containers.
 
 ## Architecture
 
@@ -11,7 +11,7 @@ Windows-native Docker orchestration for local LLM + embedding + vector DB + sear
 | ollama | `ollama` | 11434 | LLM inference (Ollama, CUDA) |
 | qdrant | `qdrant` | 6333 | Vector DB (named volume) |
 | searxng | `searxng` | 8888 | Web search |
-| **literag** | `lightrag` | **9621** | **RAG API + knowledge graphs** |
+| literag | `lightrag` | 9621 | RAG API + knowledge graphs |
 
 **Default model:** `unsloth/Qwen3.6-35B-A3B-MTP-GGUF` (Q4_K_M, 256k ctx, 10 GPU layers).
 Switch models by editing the corresponding `*-env.bat` file's `MODEL` variable, or the compose file.
