@@ -17,12 +17,15 @@ docker run -d ^
     %IMAGE% ^
     --port 8080 ^
     --model %MODEL% ^
+    --jinja ^
+    --ctx-size 1048576 ^
     --flash-attn on ^
-    --parallel 4 ^
-    --spec-type draft-mtp ^
-    --spec-draft-n-max 2 ^
-    --ctx-size 256000 ^
+    --cache-type-k q4_0 ^
+    --cache-type-v q4_0 ^
     --n-gpu-layers 10 ^
+    --load-mode mmap ^
+    --no-repack ^
+    --n-cpu-moe 43 ^
     --metrics
 
 if %errorlevel% equ 0 (

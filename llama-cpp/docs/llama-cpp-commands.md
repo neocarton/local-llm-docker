@@ -2,6 +2,25 @@
 
 ---
 
+### unsloth/Qwen3.8-27B-GGUF
+
+**unsloth/Qwen3.8-27B-GGUF**
+
+```
+--port 8080
+--model "/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q8_0.gguf"
+--jinja ^
+--ctx-size 1048576 ^
+--flash-attn on ^
+--cache-type-k q4_0 ^
+--cache-type-v q4_0 ^
+--n-gpu-layers 10 ^
+--load-mode mmap ^
+--no-repack ^
+--n-cpu-moe 43 ^
+--metrics
+```
+
 ### unsloth/Qwen3.6-35B-A3B-MTP-GGUF
 
 **unsloth/Qwen3.6-35B-A3B-MTP-GGUF** — Q4_K_M, 256k context, MTP draft
