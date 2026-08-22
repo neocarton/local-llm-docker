@@ -18,7 +18,11 @@ docker run -d ^
     --port 8080 ^
     --model %MODEL% ^
     --jinja ^
-    --ctx-size 1048576 ^
+    --ctx-size 1000000 ^
+    --override-kv qwen35.context_length=int:1000000 ^
+    --yarn-orig-ctx 262144 ^
+    --rope-scale 4 ^
+    --rope-scaling yarn ^
     --flash-attn on ^
     --cache-type-k q4_0 ^
     --cache-type-v q4_0 ^
