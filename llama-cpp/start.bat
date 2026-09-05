@@ -9,8 +9,10 @@ echo   Model: %MODEL%
 docker run -d ^
     --gpus all ^
     --env NVIDIA_VISIBLE_DEVICES=all ^
+    --env GGML_CUDA_DISABLE_GRAPHS=1 ^
     --volume "%MODELS_DIR%:/models:ro" ^
     --volume "%CHAT_TEMPLATES_DIR%:/chat-templates:ro" ^
+    --volume "%KV_CACHE_DIR%:/.kv_cache" ^
     --publish %HOST_PORT%:8080 ^
     --rm ^
     --name %CONTAINER_NAME% ^
@@ -18,14 +20,16 @@ docker run -d ^
     --port 8080 ^
     --model %MODEL% ^
     --jinja ^
-    --ctx-size 1000000 ^
-    --override-kv qwen35.context_length=int:1000000 ^
-    --yarn-orig-ctx 262144 ^
-    --rope-scale 4 ^
-    --rope-scaling yarn ^
-    --flash-attn on ^
+    --ctx-size 262144 ^
     --cache-type-k q4_0 ^
     --cache-type-v q4_0 ^
+    --swa-full ^
+    --flash-attn on ^
+    --spec-type draft-mtp ^
+    --spec-draft-n-max 2 ^
+    --parallel 1 ^
+    --batch-size 256 ^
+    --ubatch-size 128 ^
     --n-gpu-layers 10 ^
     --load-mode mmap ^
     --no-repack ^

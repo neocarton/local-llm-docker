@@ -10,14 +10,16 @@
 --port 8080
 --model "/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q8_0.gguf"
 --jinja ^
---ctx-size 1000000 ^
---override-kv qwen35.context_length=int:1000000 ^
---yarn-orig-ctx 262144 ^
---rope-scale 4 ^
---rope-scaling yarn ^
---flash-attn on ^
+--ctx-size 262144 ^
 --cache-type-k q4_0 ^
 --cache-type-v q4_0 ^
+--swa-full ^
+--flash-attn on ^
+--spec-type draft-mtp ^
+--spec-draft-n-max 2 ^
+--parallel 1 ^
+--batch-size 256 ^
+--ubatch-size 128 ^
 --n-gpu-layers 10 ^
 --load-mode mmap ^
 --no-repack ^

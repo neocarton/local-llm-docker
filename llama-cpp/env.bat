@@ -14,3 +14,4 @@ set MODEL="/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf"
 
 set MODELS_DIR=%LOCAL_LLM_DATA_BASE_DIR%/models
 set CHAT_TEMPLATES_DIR=./chat-templates
+set KV_CACHE_DIR=%LOCAL_LLM_DATA_BASE_DIR%/.kv_cache
