@@ -20,7 +20,6 @@ docker run -d ^
     --port 8080 ^
     --model %MODEL% ^
     --jinja ^
-    --ctx-size 262144 ^
     --cache-type-k q4_0 ^
     --cache-type-v q4_0 ^
     --swa-full ^
@@ -30,7 +29,7 @@ docker run -d ^
     --parallel 1 ^
     --batch-size 256 ^
     --ubatch-size 128 ^
-    --n-gpu-layers 10 ^
+    --n-gpu-layers 8 ^
     --load-mode mmap ^
     --no-repack ^
     --n-cpu-moe 43 ^
