@@ -23,7 +23,6 @@
 --n-gpu-layers 10 ^
 --load-mode mmap ^
 --no-repack ^
---n-cpu-moe 43 ^
 --metrics
 ```
 

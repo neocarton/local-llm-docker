@@ -32,7 +32,6 @@ docker run -d ^
     --n-gpu-layers 8 ^
     --load-mode mmap ^
     --no-repack ^
-    --n-cpu-moe 43 ^
     --metrics
 
 if %errorlevel% equ 0 (
