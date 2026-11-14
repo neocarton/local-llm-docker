@@ -18,7 +18,7 @@ docker run -d ^
     --name %CONTAINER_NAME% ^
     %IMAGE% ^
     --port 8080 ^
-    --model %MODEL% ^
+    --model "%MODEL%" ^
     --jinja ^
     --ctx-size 512000 ^
     --override-kv qwen35.context_length=int:512000 ^
@@ -27,14 +27,14 @@ docker run -d ^
     --rope-scaling yarn ^
     --cache-type-k q4_0 ^
     --cache-type-v q4_0 ^
-    --swa-full ^
     --flash-attn on ^
     --spec-type draft-mtp ^
     --spec-draft-n-max 2 ^
     --parallel 1 ^
     --batch-size 128 ^
     --ubatch-size 64 ^
-    --n-gpu-layers 8 ^
+    --fit on ^
+    --fit-target 256 ^
     --load-mode mmap ^
     --no-repack ^
     --metrics

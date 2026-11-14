@@ -6,6 +6,8 @@ call env.bat
 echo Starting %CONTAINER_NAME%...
 echo   Model: %MODEL%
 
+set "MODEL=/models/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF/Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp.gguf"
+
 docker run -d ^
     --gpus all ^
     --env NVIDIA_VISIBLE_DEVICES=all ^
@@ -18,20 +20,21 @@ docker run -d ^
     --name %CONTAINER_NAME% ^
     %IMAGE% ^
     --port 8080 ^
-    --model %MODEL% ^
+    --model "%MODEL%" ^
     --jinja ^
+    --flash-attn on ^
     --cache-type-k q4_0 ^
     --cache-type-v q4_0 ^
     --swa-full ^
-    --flash-attn on ^
     --spec-type draft-mtp ^
     --spec-draft-n-max 2 ^
     --parallel 1 ^
     --batch-size 256 ^
     --ubatch-size 128 ^
-    --n-gpu-layers 8 ^
+    --n-gpu-layers auto ^
+    --fit on ^
+    --fit-target 512 ^
     --load-mode mmap ^
-    --no-repack ^
     --metrics
 
 if %errorlevel% equ 0 (

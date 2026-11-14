@@ -6,6 +6,7 @@ call env.bat
 echo Starting %CONTAINER_NAME%...
 echo   Model: %MODEL%
 
+
 docker run -d ^
     --gpus all ^
     --env NVIDIA_VISIBLE_DEVICES=all ^
@@ -18,7 +19,7 @@ docker run -d ^
     --name %CONTAINER_NAME% ^
     %IMAGE% ^
     --port 8080 ^
-    --model %MODEL% ^
+    --model "%MODEL%" ^
     --jinja ^
     --ctx-size 1000000 ^
     --override-kv qwen35.context_length=int:1000000 ^
@@ -34,9 +35,9 @@ docker run -d ^
     --parallel 1 ^
     --batch-size 128 ^
     --ubatch-size 64 ^
-    --n-gpu-layers 8 ^
+    --fit on ^
+    --fit-target 256 ^
     --load-mode mmap ^
-    --no-repack ^
     --metrics
 
 if %errorlevel% equ 0 (
